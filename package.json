@@ -1,0 +1,22 @@
+{
+  "name": "space-shooter",
+  "version": "1.0.0",
+  "description": "a space shooter game created with Godot",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alin07/space-shooter.git"
+  },
+  "scripts": {
+    "build": "serve ./html-export"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  },
+  "author": "alin07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alin07/space-shooter/issues"
+  },
+  "homepage": "https://github.com/alin07/space-shooter#readme"
+}
