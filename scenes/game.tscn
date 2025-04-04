@@ -1,21 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1w1gu1pc457a"]
+[gd_scene load_steps=11 format=3 uid="uid://c1w1gu1pc457a"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_hn0ng"]
 [ext_resource type="PackedScene" uid="uid://bpys2tojhagm5" path="res://scenes/player.tscn" id="2_ns3ql"]
+[ext_resource type="AudioStream" uid="uid://cowfppni666s0" path="res://assets/Bonus/sfx_laser1.ogg" id="4_5i7cj"]
 [ext_resource type="PackedScene" uid="uid://bjlro6q8gbh06" path="res://scenes/diver_enemy.tscn" id="4_34ys8"]
 [ext_resource type="PackedScene" uid="uid://crj4elhxf7aec" path="res://scenes/hud.tscn" id="4_scg38"]
 [ext_resource type="PackedScene" uid="uid://cx1djqlmv3yp6" path="res://scenes/enemy.tscn" id="4_sxqtd"]
+[ext_resource type="AudioStream" uid="uid://cdhj0apjt7ghc" path="res://assets/Bonus/sfx_laser2.ogg" id="5_8x7ty"]
 [ext_resource type="PackedScene" uid="uid://rutg6hscg4rm" path="res://scenes/game_over_screen.tscn" id="5_i5bem"]
+[ext_resource type="AudioStream" uid="uid://h8hylwg0diw0" path="res://assets/Bonus/sfx_shieldDown.ogg" id="6_cmgug"]
+[ext_resource type="Texture2D" uid="uid://u2wxgsh76rlt" path="res://assets/Backgrounds/purple.png" id="6_gcfqw"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_hn0ng")
 enemy_scenes = Array[PackedScene]([ExtResource("4_sxqtd"), ExtResource("4_34ys8")])
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_5i7cj")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_8x7ty")
+
+[node name="ExplodeSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_cmgug")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UILayer" instance=ExtResource("4_scg38")]
 
 [node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_i5bem")]
+visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 2000)
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("6_gcfqw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1500, 2000)
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 autostart = true
