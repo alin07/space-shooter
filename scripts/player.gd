@@ -1,12 +1,16 @@
 class_name Player extends CharacterBody2D
 
+signal laser_shot(laser_scene, location)
+signal killed
+
+
 @export var rate_of_fire := 0.25
 
 const SPEED_X = 600.0
 const SPEED_Y = 500.0
 const JUMP_VELOCITY = -400.0
 
-signal laser_shot(laser_scene, location)
+
 var laser_scene = preload("res://scenes/laser.tscn")
 
 @onready var muzzle = $Muzzle
@@ -39,3 +43,4 @@ func shoot() -> void:
 	
 func die() -> void:
 	queue_free()
+	killed.emit()

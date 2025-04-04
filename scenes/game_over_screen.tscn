@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://rutg6hscg4rm"]
+
+[ext_resource type="FontFile" uid="uid://cubj7y86kb62b" path="res://assets/Bonus/kenvector_future.ttf" id="1_oqang"]
+[ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_xxt2p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6ljy"]
+bg_color = Color(0, 0.45, 0.6, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_iwi63"]
+font = ExtResource("1_oqang")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_dybw2"]
+font = ExtResource("1_oqang")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvft1"]
+font = ExtResource("1_oqang")
+font_size = 50
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxt2p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.0
+offset_top = -580.0
+offset_right = 501.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r6ljy")
+
+[node name="GameOver" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -353.5
+offset_top = 113.0
+offset_right = 362.5
+offset_bottom = 226.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_iwi63")
+
+[node name="HiScore" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -353.5
+offset_top = 303.0
+offset_right = 362.5
+offset_bottom = 416.0
+grow_horizontal = 2
+text = "Hi Score: 99999"
+label_settings = SubResource("LabelSettings_dybw2")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -364.5
+offset_top = 406.0
+offset_right = 351.5
+offset_bottom = 519.0
+grow_horizontal = 2
+text = "score: 99999
+"
+label_settings = SubResource("LabelSettings_kvft1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetButton" type="Button" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.5
+offset_top = 222.5
+offset_right = 177.5
+offset_bottom = 321.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_oqang")
+theme_override_font_sizes/font_size = 50
+text = "Retry?
+"
+
+[connection signal="pressed" from="ColorRect/Panel/ResetButton" to="." method="_on_reset_button_pressed"]
