@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var rate_of_fire := 0.25
 
@@ -31,8 +31,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED_X)
 		velocity.y = move_toward(velocity.y, 0, SPEED_Y)
-#
 	move_and_slide()
+	global_position = global_position.clamp(Vector2.ZERO, get_viewport_rect().size)
 	
 func shoot() -> void:
 	laser_shot.emit(laser_scene, muzzle.global_position)
+	
+func die() -> void:
+	queue_free()
