@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://rutg6hscg4rm"]
 
 [ext_resource type="FontFile" uid="uid://cubj7y86kb62b" path="res://assets/Bonus/kenvector_future.ttf" id="1_oqang"]
-[ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_xxt2p"]
+[ext_resource type="Script" uid="uid://bphv8m22ckjru" path="res://scripts/game_over_screen.gd" id="1_xxt2p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6ljy"]
 bg_color = Color(0, 0.45, 0.6, 1)

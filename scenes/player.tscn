@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpys2tojhagm5"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_08fr3"]
+[ext_resource type="Script" uid="uid://caxinwi23h4d2" path="res://scripts/player.gd" id="1_08fr3"]
 [ext_resource type="Texture2D" uid="uid://btewlu1qp7cdx" path="res://assets/PNG/playerShip1_blue.png" id="1_feph7"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]

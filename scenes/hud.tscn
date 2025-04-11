@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://crj4elhxf7aec"]
 
-[ext_resource type="Script" path="res://scripts/hud.gd" id="1_5mdsx"]
+[ext_resource type="Script" uid="uid://br0xqgnwvsphk" path="res://scripts/hud.gd" id="1_5mdsx"]
 [ext_resource type="FontFile" uid="uid://cubj7y86kb62b" path="res://assets/Bonus/kenvector_future.ttf" id="2_63qgg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5djbw"]

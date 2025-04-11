@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c1w1gu1pc457a"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_hn0ng"]
+[ext_resource type="Script" uid="uid://imgmoydral3f" path="res://scripts/game.gd" id="1_hn0ng"]
 [ext_resource type="PackedScene" uid="uid://bpys2tojhagm5" path="res://scenes/player.tscn" id="2_ns3ql"]
 [ext_resource type="AudioStream" uid="uid://cowfppni666s0" path="res://assets/Bonus/sfx_laser1.ogg" id="4_5i7cj"]
 [ext_resource type="PackedScene" uid="uid://bjlro6q8gbh06" path="res://scenes/diver_enemy.tscn" id="4_34ys8"]
